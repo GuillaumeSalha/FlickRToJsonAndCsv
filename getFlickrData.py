@@ -29,7 +29,7 @@ d2 = d1 + oneDay
 for i in range(1, 365):
 	d2 = d1 + oneDay
 
-	params = {'method': 'flickr.photos.search', 'format' : 'json', 'woe_id' : 2151849, 'api_key':'3085e49ef40d82054a86cee531db3a6a', 'min_taken_date':str(d1), 'max_taken_date':str(d2), 'has_geo':1, 'extras':'geo,tags'}
+	params = {'method': 'flickr.photos.search', 'format' : 'json', 'woe_id' : 2151849, 'api_key':'ENTER API KEY HERE', 'min_taken_date':str(d1), 'max_taken_date':str(d2), 'has_geo':1, 'extras':'geo,tags'}
 	data = requests.get('https://api.flickr.com/services/rest/', params=params)
 
 	dataFile = open(path + str(d1) + "-photos.json","w+")
@@ -40,7 +40,7 @@ for i in range(1, 365):
 	pages = dataJSONified["photos"]["pages"]
 
 	for page in range(2,pages+1,1):
-		params = {'method': 'flickr.photos.search', 'format' : 'json', 'woe_id' : 2151849, 'api_key':'3085e49ef40d82054a86cee531db3a6a', 'min_taken_date':str(d1), 'max_taken_date':str(d2), 'has_geo':1, 'extras':'geo,tags', 'page':page}
+		params = {'method': 'flickr.photos.search', 'format' : 'json', 'woe_id' : 2151849, 'api_key':'ENTER API KEY HERE', 'min_taken_date':str(d1), 'max_taken_date':str(d2), 'has_geo':1, 'extras':'geo,tags', 'page':page}
 		data = requests.get('https://api.flickr.com/services/rest/', params=params)
 
 		dataFile = open(path + str(d1) + "-" + str(page) + "-photos.json","w+")
